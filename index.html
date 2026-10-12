@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advocacia estratégica, atendimento próximo e orientação jurídica personalizada com Keitiane Barbosa.">
+  <title>Keitiane Barbosa | Advocacia</title>
+  <style>
+    /* =========================================================
+       PERSONALIZAÇÃO RÁPIDA — altere cores, fontes e medidas aqui
+       ========================================================= */
+    :root {
+      --navy: #151923;
+      --navy-soft: #202735;
+      --gold: #d8b071;
+      --gold-dark: #b88c4c;
+      --cream: #f6f2eb;
+      --paper: #fffdf9;
+      --ink: #24252a;
+      --muted: #6c6b68;
+      --line: rgba(30, 32, 38, .13);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Aptos", "Segoe UI", Arial, sans-serif;
+      --content: 1180px;
+      --radius: 3px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { color: var(--gold-dark); font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+    h1, h2, h3 { margin: 0; font-weight: 400; line-height: 1.12; }
+    h1, h2 { font-family: var(--serif); }
+    h2 { font-size: clamp(2.2rem, 4vw, 3.55rem); letter-spacing: -.035em; }
+    p { margin: 0; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 49px; padding: 0 23px; border: 1px solid var(--gold); background: var(--gold); color: #17191f; font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; transition: transform .2s, background .2s; cursor: pointer; }
+    .button:hover { transform: translateY(-2px); background: #e4c28b; }
+    .button-outline { background: transparent; color: white; border-color: rgba(216,176,113,.75); }
+    .button-outline:hover { color: var(--navy); }
+    /* Header */
+    .header { position: sticky; top: 0; z-index: 20; background: rgba(255,253,249,.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 230px; }
+    .brand img { width: 220px; max-height: 66px; object-fit: contain; object-position: left center; }
+    .nav-links { display: flex; align-items: center; gap: clamp(14px, 2.2vw, 30px); }
+    .nav-links a { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold-dark); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: transparent; padding: 9px 12px; font-size: 1.25rem; }
+    /* Hero */
+    .hero { position: relative; overflow: hidden; background: var(--navy); color: white; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 78% 40%, rgba(216,176,113,.13), transparent 35%), linear-gradient(90deg, rgba(21,25,35,.99) 0%, rgba(21,25,35,.95) 47%, rgba(21,25,35,.40) 100%); z-index: 1; }
+    .hero-grid { display: grid; grid-template-columns: 1.03fr .97fr; min-height: 610px; align-items: center; position: relative; z-index: 2; }
+    .hero-copy { padding: 88px 0 100px; max-width: 620px; }
+    .hero h1 { font-size: clamp(3rem, 5.5vw, 5.5rem); letter-spacing: -.045em; margin: 20px 0 22px; }
+    .hero h1 span { color: var(--gold); display: block; }
+    .hero-copy > p { color: #d6d7dc; max-width: 490px; font-size: 1.04rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 32px; }
+    .hero-visual { align-self: stretch; min-height: 480px; position: relative; }
+    .hero-visual img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; object-position: center; opacity: .88; }
+    .hero-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--navy) 0%, rgba(21,25,35,.08) 40%, rgba(21,25,35,.08) 100%); }
+    .hero-note { position: absolute; right: 0; bottom: 36px; z-index: 3; width: 230px; padding: 22px; background: var(--gold); color: var(--navy); }
+    .hero-note strong { display: block; font: 1.35rem var(--serif); }
+    .hero-note span { font-size: .75rem; }
+    /* Intro */
+    .intro { padding: 105px 0; background: var(--cream); }
+    .intro-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 9%; align-items: start; }
+    .intro h2 { margin-top: 17px; }
+    .intro-text { padding-top: 11px; color: var(--muted); font-size: 1.02rem; }
+    .intro-text p + p { margin-top: 18px; }
+    .signature { margin-top: 28px; color: var(--navy); font-family: var(--serif); font-size: 1.45rem; }
+    /* Services */
+    .services { padding: 105px 0 112px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 35px; margin-bottom: 44px; }
+    .section-head h2 { margin-top: 15px; }
+    .section-head p { max-width: 360px; color: var(--muted); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service-card { position: relative; padding: 34px 29px 31px; min-height: 270px; background: var(--cream); border: 1px solid rgba(30,32,38,.04); transition: transform .25s, box-shadow .25s; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: 0 18px 38px rgba(21,25,35,.08); }
+    .service-number { color: var(--gold-dark); font: 1.2rem var(--serif); }
+    .service-card h3 { margin: 30px 0 13px; font: 1.55rem var(--serif); }
+    .service-card p { color: var(--muted); font-size: .92rem; }
+    .service-card a { display: inline-block; margin-top: 20px; color: var(--gold-dark); font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    /* Diferenciais */
+    .approach { background: var(--navy); color: white; padding: 105px 0; }
+    .approach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9%; align-items: center; }
+    .approach h2 { margin: 16px 0 22px; }
+    .approach-copy > p { color: #c6c8ce; max-width: 520px; }
+    .values { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 24px; margin-top: 35px; }
+    .value { border-top: 1px solid rgba(216,176,113,.55); padding-top: 15px; }
+    .value h3 { color: var(--gold); font: 1.2rem var(--serif); margin-bottom: 8px; }
+    .value p { color: #c6c8ce; font-size: .85rem; }
+    .approach-photo { position: relative; min-height: 480px; }
+    .approach-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .quote { position: absolute; bottom: -25px; left: -30px; max-width: 320px; padding: 24px 27px; background: var(--gold); color: var(--navy); font: 1.45rem/1.35 var(--serif); }
+    /* Steps */
+    .process { padding: 100px 0; }
+    .process-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 34px; margin-top: 42px; }
+    .step { border-top: 1px solid var(--gold); padding-top: 20px; }
+    .step .num { color: var(--gold-dark); font: 2rem var(--serif); }
+    .step h3 { font: 1.4rem var(--serif); margin: 15px 0 10px; }
+    .step p { color: var(--muted); font-size: .92rem; }
+    /* Contact */
+    .contact { padding: 100px 0; background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 9%; }
+    .contact h2 { margin: 15px 0 22px; }
+    .contact-copy > p { color: var(--muted); max-width: 410px; }
+    .contact-list { display: grid; gap: 15px; margin-top: 32px; }
+    .contact-item { display: flex; gap: 13px; align-items: start; }
+    .contact-item b { display: block; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
+    .contact-item span { color: var(--muted); font-size: .92rem; }
+    form { padding: 32px; background: var(--paper); border: 1px solid var(--line); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+    .field { margin-bottom: 16px; }
+    label { display: block; margin-bottom: 7px; font-size: .76rem; font-weight: 700; }
+    input, select, textarea { width: 100%; border: 1px solid #d9d5cd; background: #fff; border-radius: 0; padding: 13px 14px; color: var(--ink); font: inherit; font-size: .9rem; outline: none; }
+    input:focus, select:focus, textarea:focus { border-color: var(--gold-dark); box-shadow: 0 0 0 2px rgba(216,176,113,.18); }
+    textarea { min-height: 120px; resize: vertical; }
+    .consent { display: flex; gap: 9px; align-items: start; color: var(--muted); font-size: .78rem; margin: 3px 0 20px; }
+    .consent input { width: auto; margin-top: 5px; }
+    .form-note { margin-top: 12px; color: var(--muted); font-size: .75rem; }
+    /* Footer */
+    footer { padding: 32px 0; background: #10131a; color: #c4c5c9; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-brand { color: white; font: 1.25rem var(--serif); }
+    .footer-brand span { color: var(--gold); font: .65rem var(--sans); letter-spacing: .22em; display: block; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; font-size: .8rem; }
+    .copyright { border-top: 1px solid rgba(255,255,255,.12); margin-top: 25px; padding-top: 20px; color: #8e9199; font-size: .74rem; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
+    @media (max-width: 900px) {
+      .brand { min-width: 0; } .brand img { width: 190px; }
+      .nav-links { gap: 14px; } .nav-links a { font-size: .65rem; }
+      .hero-grid { grid-template-columns: 1fr .8fr; min-height: 560px; }
+      .hero h1 { font-size: clamp(2.8rem, 6vw, 4.4rem); }
+      .intro-grid, .approach-grid, .contact-grid { gap: 5%; }
+      .quote { left: -15px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(var(--content), calc(100% - 36px)); }
+      .nav { min-height: 72px; flex-wrap: wrap; }
+      .brand img { width: 185px; max-height: 56px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; flex-direction: column; align-items: stretch; width: 100%; padding: 0 0 18px; gap: 0; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 0; border-top: 1px solid var(--line); font-size: .75rem; }
+      .nav .header-cta { display: none; }
+      .hero-grid { display: block; min-height: 0; }
+      .hero-copy { padding: 75px 0 50px; }
+      .hero h1 { font-size: clamp(2.8rem, 12vw, 4.1rem); }
+      .hero-visual { min-height: 320px; margin: 0 -18px; }
+      .hero-visual::after { background: linear-gradient(180deg, var(--navy) 0%, transparent 35%, rgba(21,25,35,.1) 100%); }
+      .hero-note { right: 18px; bottom: 18px; width: 195px; padding: 16px; }
+      .intro, .services, .approach, .process, .contact { padding: 72px 0; }
+      .intro-grid, .approach-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 20px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 0; }
+      .approach-photo { min-height: 360px; margin: 10px 0 20px 15px; }
+      .quote { left: -15px; bottom: -20px; font-size: 1.2rem; }
+      .process-grid { grid-template-columns: 1fr; gap: 28px; }
+      form { padding: 22px 18px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <!-- EDITE AQUI: logotipo em assets/logo-keitiane-barbosa.png -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Keitiane Barbosa - início">
+        <img src="assets/logo-keitiane-barbosa.png" alt="Keitiane Barbosa — Advocacia">
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#inicio">Início</a><a href="#sobre">A profissional</a><a href="#atuacao">Atuação</a><a href="#diferenciais">Diferenciais</a><a href="#contato">Contato</a>
+      </nav>
+      <a class="button header-cta" href="#contato">Agendar consulta ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Advocacia com estratégia e propósito</span>
+          <h1>Segurança jurídica para <span>seguir em frente.</span></h1>
+          <p>Orientação jurídica personalizada, atendimento próximo e uma atuação comprometida com os seus direitos e objetivos.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contato">Fale com a advogada ↗</a>
+            <a class="button button-outline" href="#atuacao">Conheça a atuação</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <!-- FOTO PROVISÓRIA: substitua por assets/foto-hero.jpg quando tiver a foto autorizada da profissional -->
+          <img src="assets/foto-escritorio-provisoria.jpg" alt="Ambiente de escritório jurídico, imagem ilustrativa">
+          <div class="hero-note"><strong>Atendimento individualizado</strong><span>Escuta, clareza e estratégia em cada etapa.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="sobre">
+      <div class="container intro-grid reveal">
+        <div>
+          <span class="eyebrow">Keitiane Barbosa · Advocacia</span>
+          <h2>Direito com clareza, cuidado e compromisso.</h2>
+        </div>
+        <div class="intro-text">
+          <p>Cada situação jurídica tem suas particularidades. Por isso, o trabalho começa com uma escuta atenta, análise responsável do caso e explicação objetiva dos caminhos possíveis.</p>
+          <p>O propósito é oferecer acompanhamento profissional transparente, com estratégia e dedicação em todas as etapas — para que você possa tomar decisões com mais segurança.</p>
+          <div class="signature">Keitiane Barbosa</div>
+          <p style="font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dark);">Advogada</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="atuacao">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><span class="eyebrow">Como podemos ajudar</span><h2>Áreas de atuação</h2></div>
+          <p>Atendimento jurídico orientado às necessidades de cada cliente, com análise individual e comunicação clara.</p>
+        </div>
+        <!-- CONFIRMAR com a cliente as áreas de atuação antes de publicar. -->
+        <div class="service-grid">
+          <article class="service-card reveal"><span class="service-number">01 /</span><h3>Consultoria jurídica</h3><p>Orientação preventiva para compreender direitos, avaliar alternativas e tomar decisões com mais informação.</p><a href="#contato">Solicitar orientação ↗</a></article>
+          <article class="service-card reveal"><span class="service-number">02 /</span><h3>Assessoria e acompanhamento</h3><p>Acompanhamento profissional e comunicação transparente durante as etapas do atendimento jurídico.</p><a href="#contato">Conversar sobre meu caso ↗</a></article>
+          <article class="service-card reveal"><span class="service-number">03 /</span><h3>Defesa de direitos</h3><p>Análise cuidadosa do caso e definição de estratégias jurídicas adequadas às circunstâncias apresentadas.</p><a href="#contato">Agendar atendimento ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="diferenciais">
+      <div class="container approach-grid">
+        <div class="approach-copy reveal">
+          <span class="eyebrow">Uma relação de confiança</span>
+          <h2>Atuação próxima.<br><span style="color:var(--gold)">Estratégia consistente.</span></h2>
+          <p>Mais do que apresentar caminhos jurídicos, é importante que você entenda cada etapa, os cenários possíveis e os próximos passos do seu caso.</p>
+          <div class="values">
+            <div class="value"><h3>Escuta atenta</h3><p>Compreensão das particularidades e objetivos de cada cliente.</p></div>
+            <div class="value"><h3>Clareza</h3><p>Informações diretas para apoiar decisões conscientes.</p></div>
+            <div class="value"><h3>Ética e sigilo</h3><p>Respeito aos deveres profissionais e à confidencialidade.</p></div>
+            <div class="value"><h3>Compromisso</h3><p>Acompanhamento responsável e alinhamento de expectativas.</p></div>
+          </div>
+        </div>
+        <div class="approach-photo reveal">
+          <!-- IMAGEM ILUSTRATIVA: troque por fotografia autorizada do escritório ou da profissional -->
+          <img src="assets/foto-escritorio-provisoria.jpg" alt="Mesa de escritório com livros jurídicos e balança da justiça, imagem ilustrativa">
+          <div class="quote">“Informação clara é parte essencial de uma boa orientação jurídica.”</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <div class="reveal"><span class="eyebrow">Como funciona</span><h2 style="margin-top:15px">Um atendimento em três etapas.</h2></div>
+        <div class="process-grid">
+          <article class="step reveal"><span class="num">01</span><h3>Escuta e compreensão</h3><p>Você apresenta sua situação e compartilha as informações necessárias para uma primeira análise.</p></article>
+          <article class="step reveal"><span class="num">02</span><h3>Análise e orientação</h3><p>São avaliados os aspectos relevantes, as possibilidades jurídicas e os próximos passos recomendados.</p></article>
+          <article class="step reveal"><span class="num">03</span><h3>Acompanhamento</h3><p>Com o alinhamento das condições de atendimento, o trabalho segue com comunicação e acompanhamento profissional.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">Vamos conversar</span>
+          <h2>Conte como podemos orientar você.</h2>
+          <p>Entre em contato para solicitar informações ou verificar a possibilidade de agendar uma consulta.</p>
+          <div class="contact-list">
+            <!-- EDITE os dados abaixo após confirmação da cliente -->
+            <div class="contact-item"><span aria-hidden="true">✉</span><div><b>E-mail</b><span>Inserir e-mail profissional</span></div></div>
+            <div class="contact-item"><span aria-hidden="true">⌖</span><div><b>Localização</b><span>Inserir cidade e endereço de atendimento</span></div></div>
+            <div class="contact-item"><span aria-hidden="true">◷</span><div><b>Atendimento</b><span>Com horário agendado</span></div></div>
+          </div>
+        </div>
+        <form id="contact-form" class="reveal">
+          <div class="form-row">
+            <div class="field"><label for="nome">Nome completo *</label><input id="nome" name="nome" autocomplete="name" required placeholder="Seu nome"></div>
+            <div class="field"><label for="telefone">Telefone / WhatsApp *</label><input id="telefone" name="telefone" autocomplete="tel" required placeholder="(00) 00000-0000"></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" placeholder="voce@email.com"></div>
+            <div class="field"><label for="assunto">Assunto</label><select id="assunto" name="assunto"><option value="">Selecione uma opção</option><option>Consultoria jurídica</option><option>Assessoria e acompanhamento</option><option>Defesa de direitos</option><option>Outro assunto</option></select></div>
+          </div>
+          <div class="field"><label for="mensagem">Como podemos ajudar? *</label><textarea id="mensagem" name="mensagem" required placeholder="Descreva brevemente o motivo do contato. Evite incluir informações sensíveis neste primeiro contato."></textarea></div>
+          <label class="consent"><input type="checkbox" id="consentimento" required><span>Autorizo o uso dos dados informados para retorno a esta solicitação. * Leia a política de privacidade antes da publicação do site.</span></label>
+          <button class="button" type="submit">Preparar mensagem ↗</button>
+          <p class="form-note">Formulário demonstrativo: não armazena nem envia dados a um servidor. Ao enviar, será aberta uma mensagem pronta para WhatsApp, após configurar o número no código.</p>
+          <p id="form-status" role="status" aria-live="polite" class="form-note"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-brand">Keitiane Barbosa <span>ADVOCACIA</span></div>
+        <div class="footer-links"><a href="#sobre">A profissional</a><a href="#atuacao">Áreas de atuação</a><a href="#contato">Contato</a></div>
+      </div>
+      <div class="copyright"><span>© <span id="year"></span> Keitiane Barbosa Advocacia. Todos os direitos reservados.</span><span>Conteúdo institucional sujeito à revisão profissional antes da publicação.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    // EDITE AQUI: informe o WhatsApp da profissional com código do país e DDD, somente números.
+    // Exemplo de formato: 5563999999999. O número abaixo está vazio de propósito.
+    const WHATSAPP_NUMBER = "";
+
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+      toggle.textContent = open ? "×" : "☰";
+    });
+    nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = "☰";
+    }));
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const observer = ("IntersectionObserver" in window) ? new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 }) : null;
+    document.querySelectorAll(".reveal").forEach(el => {
+      if (observer) observer.observe(el); else el.classList.add("visible");
+    });
+
+    document.getElementById("contact-form").addEventListener("submit", event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const data = new FormData(form);
+      const message = [
+        "Olá! Gostaria de entrar em contato com Keitiane Barbosa Advocacia.",
+        "",
+        "Nome: " + data.get("nome"),
+        "Telefone: " + data.get("telefone"),
+        "E-mail: " + (data.get("email") || "Não informado"),
+        "Assunto: " + (data.get("assunto") || "Não selecionado"),
+        "Mensagem: " + data.get("mensagem"),
+        "",
+        "Autorizo o uso dos dados para retorno a esta solicitação."
+      ].join("\n");
+      const status = document.getElementById("form-status");
+      if (!WHATSAPP_NUMBER) {
+        status.textContent = "Para ativar o envio, preencha WHATSAPP_NUMBER no final do arquivo index.html. Nenhum dado foi enviado.";
+        return;
+      }
+      window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
+      status.textContent = "Sua mensagem foi preparada para abrir no WhatsApp. Confirme o envio no aplicativo.";
+    });
+  </script>
+</body>
+</html>
